@@ -25,41 +25,36 @@ export class News extends Component {
     }
 
     handleOnNextClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=77b14e54ed2b42f7bdfd77dd112ad757&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
-        let data = await fetch(url);
-        this.setState({ loading: true });
-        let parsedData = await data.json();
         this.setState({
-            page: this.state.page + 1,
-            articles: parsedData.articles,
-            loading: false
+            page: this.state.page + 1
         });
+
+        this.updateNews();
     }
 
     handleOnPrevClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=77b14e54ed2b42f7bdfd77dd112ad757&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+        this.setState({
+            page: this.state.page - 1
+        });
+
+        this.updateNews();
+    }
+
+    async updateNews() {
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=77b14e54ed2b42f7bdfd77dd112ad757&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         this.setState({ loading: true });
         let parsedData = await data.json();
 
         this.setState({
-            page: this.state.page - 1,
+            page: this.state.page,
             articles: parsedData.articles,
             loading: false
         });
     }
 
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=77b14e54ed2b42f7bdfd77dd112ad757&page=1&pageSize=${this.props.pageSize}`;
-        let data = await fetch(url);
-        this.setState({ loading: true });
-        let parsedData = await data.json();
-        this.setState({
-            articles: parsedData.articles,
-            totalArticles: parsedData.totalResults,
-            totalResults: parsedData.totalResults,
-            loading: false
-        });
+        this.updateNews();
     }
 
     render() {

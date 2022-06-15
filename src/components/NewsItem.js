@@ -12,8 +12,8 @@ export class NewsItem extends Component {
                     <div className="card-body">
                         <h5 className="card-title">{title}</h5>
                         <p className="card-text">{description}</p>
-                        <p class="card-text"><small className="text-muted">By {author} on {new Date(date).toGMTString()} </small></p>
-                        <a href={newsURL} target="_blank" className="btn btn-sm btn-dark">Read More</a>
+                        <p className="card-text"><small className="text-muted">By {author} on {new Date(date).toGMTString()} </small></p>
+                        <a href={newsURL} target="_blank" className="btn btn-sm btn-info" rel="noreferrer">Read More</a>
                     </div>
                 </div>
             </div>
