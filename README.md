@@ -3,10 +3,11 @@
 ## Description
 A responsive website built with react.js, fetching News API data to render articles category wise.
 
-The application allows the user to search for articles, with the displayed set to a maxium of 10 results, and view the full article on the respective external site.
+The application allows the user to filter news articles by category, with the infinite scroll for each category, and view the full article on the respective external site.
 
 App Summary:
 * Filter articles by category 
+* Infinite scroll
 * Mobile and Web supported
 
 ## Table of Contents
