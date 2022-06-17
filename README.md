@@ -1,7 +1,7 @@
 # News Monkey App
 
 ## Description
-A responsive website built with react.js and vanilla css, fetching News API data to render articles category wise.
+A responsive website built with react.js, fetching News API data to render articles category wise.
 
 The application allows the user to search for articles, with the displayed set to a maxium of 10 results, and view the full article on the respective external site.
 
