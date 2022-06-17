@@ -20,7 +20,7 @@ App Summary:
 > Please follow the execute instructions below as the News Api has a CORS policy.
 
 ## Execute
-Clone the repo and in the command line run `npm install` or shortcut `npm i` to download all the npm package dependancies, then invoke the application with command `npm run start`.
+Clone the repo and in the command line run `npm install` or shortcut `npm i` to download all the npm package dependancies, then deploy the application to localhost with command `npm run start`.
 
 ## Environment
 * React.js
